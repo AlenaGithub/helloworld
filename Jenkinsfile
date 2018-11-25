@@ -6,6 +6,21 @@ pipeline {
         DB_ENGINE    = 'sqlite'
     }
 
+    parameter {
+        choice(name: 'door_choice',
+            choices: 'one\ntwo\nthree\nfour',
+            description: 'What door do you choose?'
+        )
+        booleanParam(name: 'CAN_DANCE',
+            defaultValue: true,
+            description: 'Checkbox parameter'
+        )
+        string(name: 'myString',
+        defaultValue: 'Dance!',
+        description: 'Do the funky chicken!'
+        )
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -35,12 +50,12 @@ pipeline {
     }
 //The ‘properties’ section has been renamed as of version 0.8. Use ‘options’ instead. @ line 38, column 1.
 
-options([
-  parameters([
-    string(name: 'submodule', defaultValue: 'spring-music'),
-    string(name: 'submodule_branch', defaultValue: 'develop')
-  ])
-])
+//options([
+//  parameters([
+//    string(name: 'submodule', defaultValue: 'spring-music'),
+//    string(name: 'submodule_branch', defaultValue: 'develop')
+//  ])
+//])
 
 
     post {
