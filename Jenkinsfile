@@ -6,7 +6,7 @@ pipeline {
         DB_ENGINE    = 'sqlite'
     }
 
-    parameter {
+    parameters {
         choice(name: 'door_choice',
             choices: 'one\ntwo\nthree\nfour',
             description: 'What door do you choose?'
