@@ -33,9 +33,9 @@ pipeline {
 //            }
 //        }
     }
+//The ‘properties’ section has been renamed as of version 0.8. Use ‘options’ instead. @ line 38, column 1.
 
-
-properties([
+options([
   parameters([
     string(name: 'submodule', defaultValue: 'spring-music'),
     string(name: 'submodule_branch', defaultValue: 'develop')
